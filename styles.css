@@ -2,7 +2,6 @@
     --primary: #030029;
     --primary-2: #151237;
     --primary-3: #151523;
-    --primary-4: #100808;
 
     
 
@@ -18,6 +17,11 @@
 
     --sect-size: 100vh;
 }
+
+html {
+    font-size: 16px; /* Define base font size */
+}
+
 
 body {
     background-color: var(--primary);
@@ -97,8 +101,9 @@ h1, h2, h3, p, ul, li {
 }
 
 .center-wrapper {
+    margin-top: 2rem;
     width: 100%;
-    height: 100%;
+    height: 80%;
     display: flex;
     align-items: center;
     justify-content: start;
@@ -163,11 +168,9 @@ h1, h2, h3, p, ul, li {
 
 .photo-cont {
     aspect-ratio: 1;
-    max-width: 25rem;
+    max-width: 20rem;
     object-fit: cover;
-    object-position: bottom ;
-
-    
+    object-position:bottom
 }
 
 #slide-sect {
@@ -219,13 +222,31 @@ h1, h2, h3, p, ul, li {
 .fadeOutElement {
     animation: fadeOut 1s ease forwards;
 }
-  
+
+#title-p1, #title-p2 {
+    padding: 15px;
+    border-radius: 12px;
+    background-color: var(--accent);
+    width: 15rem;
+    text-align: center;
+    max-width: 60%;
+}
+
+#title-p1 {
+    margin-bottom: 5rem;
+}
+
+#title-p2 {
+    margin-top: 5rem;
+}
+
 .heart-cont {
     width: 100%;
     height: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
     
 }
 
@@ -235,9 +256,10 @@ h1, h2, h3, p, ul, li {
     align-items: center;
     aspect-ratio: 1;
     width: 15rem;
+    max-width: 60%;
     padding: 15px;
     border-radius: 20px;
-box-shadow:  7px 7px 14px #06060e,
+    box-shadow:  7px 7px 14px #06060e,
              -7px -7px 14px #16163a;
 }
 
@@ -253,10 +275,10 @@ box-shadow:  7px 7px 14px #06060e,
   .heart:before,
   .heart:after {
     content: "";
-    width: 50px;
+    width: 3.125rem;
     height: 80px;
     background-color: var(--heart-color);
-    border-radius: 50px 50px 0 0;
+    border-radius: 3.125rem 3.125rem 0 0;
     position: absolute;
     top: 0;
   }
@@ -281,8 +303,27 @@ box-shadow:  7px 7px 14px #06060e,
     .center-wrapper {
         flex-direction: row;
         justify-content: center;
+        margin-top: 0;
     }
     .info-cont {
         font-size: 1rem;
     }
+    .photo-cont {
+        max-width: 25rem;
+    }
 }
+
+@media screen and (max-width: 360px) {
+    body {
+      font-size: 12px;
+    }
+    .heart {
+        width: 100px;
+        height: 80px;
+        position: relative;
+        animation: heartbeat 1s infinite;
+        margin: 0;
+        scale: 1.5;
+      }
+  }
+  

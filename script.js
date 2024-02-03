@@ -8,11 +8,12 @@ var slideSect = document.getElementById('slide-sect');
 var pageNum = 0;
 const imagePath = "images/";
 var images = ['','','black.png',
-    'edi.jpg',
-    'multiverse-bg.jpg',
-    'edi.jpg',
-    'multiverse-bg.jpg',
-    'edi.jpg',
+'page-3.jpg',
+'page-4.jpg',
+'page-5.jpg',
+'page-6.jpg',
+'page-7.jpg',
+'page-7.jpg',
 ];
 
 nextBtn.addEventListener('click', (e) => {
@@ -20,7 +21,12 @@ nextBtn.addEventListener('click', (e) => {
     setBackground(pageNum);
     pageNum++;
 
-    if(pageNum > images.length - 2) nextBtn.style.display = "none";
+    if(pageNum > images.length - 2) {
+        nextBtn.style.display = "none";
+        jsConfetti.addConfetti({
+            emojis: [ '🥰',],
+        })    
+    }
     console.log(pageNum)
 })
 
@@ -48,6 +54,9 @@ function loadPage(pageNumber) {
             break;
         case 6:
             context.textContent = "of them."
+            break;
+        case 7:
+            context.textContent = "🥰"
             break;
     }
 }
